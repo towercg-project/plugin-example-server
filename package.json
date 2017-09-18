@@ -1,6 +1,6 @@
 {
   "name": "@towercg-plugins/example-server",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "dist",
   "license": "AGPL-3.0",
   "engines": {
@@ -20,7 +20,7 @@
     "jest": "^21.1.0"
   },
   "peerDependencies": {
-    "@towercg/server": "^0.0.0",
+    "@towercg/server": "^0.0.1",
     "redux": "^3.7.2"
   },
   "dependencies": {
