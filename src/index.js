@@ -5,9 +5,9 @@ import { pluginReducer } from './reducer';
 export class ExamplePlugin extends TowerCGServer.ServerPlugin {
   static pluginName = "example";
   static reducer = pluginReducer;
-  static defaultConfig = { tickRate: 1000 };
+  static defaultConfig = { tickRate: 1000, logTicks: false };
 
-  initialize() {
+  async initialize() {
     const tickRate = this.pluginConfig.tickRate;
 
     this.logger.info(`Initializing with a ${tickRate}ms tickrate.`);
@@ -18,7 +18,8 @@ export class ExamplePlugin extends TowerCGServer.ServerPlugin {
 
     this.on("stateChanged", (event) => {
       const {oldState, newState} = event;
-      this.logger.debug(`Tick: ${oldState.ticks} to ${newState.ticks}.`);
+      this.pluginConfig.logTicks &&
+        this.logger.debug(`Tick: ${oldState.ticks} to ${newState.ticks}.`);
     });
 
     this.registerCommand("ping", (data) => ({ pong: true }));

@@ -24,7 +24,8 @@
     "redux": "^3.7.2"
   },
   "dependencies": {
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "redux": "^3.7.2"
   },
   "babel": {
     "presets": [
